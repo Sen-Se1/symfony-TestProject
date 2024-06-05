@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block body %}
+    <h1>
+        {{form.vars.data.id is null ? 'Create Post' : 'Update Post'}}
+    </h1>
+    <div class="mt-4">
+        {{form_start(form)}}
+           
+            {{form_row(form.title)}}
+        
+            {{form_row(form.content)}}
+           
+            <button class="btn btn-primary">
+                {{form.vars.data.id is null ? 'Create Post' : 'Update Post'}}
+            </button>
+        {{form_end(form)}}
+    </div>
+{% endblock %}
